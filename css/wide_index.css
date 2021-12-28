@@ -6,12 +6,12 @@
 /* Fonts */
 @font-face {
   font-family: "Gardenia Summer";
-  src: url("/fonts/GardeniaSummer-nRLy4.ttf") format("ttf");
+  src: url("fonts/GardeniaSummer-nRLy4.ttf") format("ttf");
 }
 
 @font-face{
 	font-family: "Font-Awesome";
-	src: url("/fonts/fa-solid-900.ttf") format("ttf");
+	src: url("fonts/fa-solid-900.ttf") format("ttf");
 }
 
 /* Fonts */
