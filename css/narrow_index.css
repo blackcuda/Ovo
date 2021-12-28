@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Gardenia Summer";
+  src: url("/fonts/GardeniaSummer-nRLy4.ttf") format("ttf");
+}
+
+@font-face{
+	font-family: "Font-Awesome";
+	src: url("/fonts/fa-solid-900.ttf") format("ttf");
+}
+
+h1 {
+	font-family: 'Seravek Medium', sans-serif;
+	color: #131415;
+	font-size: calc(22px + (32 - 22) * ((100vw - 300px) / (1600 - 300)));
+	font-weight: bold;
+}
+
+h2 {
+	font-family: 'Gardenia Summer', sans-serif;
+	color: #131415;
+	font-size: calc(65px + (100 - 65) * ((100vw - 300px) / (1600 - 300)));
+	font-weight: lighter;
+}
+
+h3{
+	font-family: 'Seravek Medium', sans-serif;
+	color: #131415;
+	font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+	padding-bottom: 25px;
+}
+
+h4{
+	font-family: 'Seravek Medium', sans-serif;
+	font-size: calc(60px + (120 - 60) * ((100vw - 300px) / (1600 - 300)));
+	color: #F0F0D6;
+	position: absolute;
+	z-index: -1;
+}
+
+p{
+	font-family: 'Seravek', sans-serif;
+	color: #131415;
+	font-size: calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
+	padding-bottom: 10px;
+}
+
+a {
+	color: #131415;
+}
+
+/* Header - nav bar */
+
+#logo_horizontaal {
+	max-width: 60vw;
+	margin: .5vh 10vw;
+	position: absolute;
+}
+
+#wide_nav{
+	display: none;
+}
+
+#meny {
+    background: #F2C008;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    transition-timing-function: cubic-bezier(10,2,3,1);
+    transform: translateX(100vw);
+    top: 0;
+    z-index: 0;
+    transition: 0.5s;
+}
+#menyAvPaa {
+    display: none;
+}
+
+#menyAvPaa:checked ~ #meny {
+    transform: translateX(0rem);
+}
+
+#burger {
+    position: fixed;
+    width: 2rem;
+    height: 2rem;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 1;
+}
+
+#burger > div {
+    height: 2px;
+    background-color: #000;
+    transition: 0.5s;
+    z-index: 999;
+}
+
+#menyAvPaa:checked ~ #burger > div {
+  background-color: #fff;
+}
+
+#menyAvPaa:checked ~ #burger > div:nth-child(1) {
+    transform: translateY(15px) rotate(45deg);
+}
+#menyAvPaa:checked ~ #burger > div:nth-child(2) {
+    opacity: 0;
+}
+#menyAvPaa:checked ~ #burger > div:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+}
+
+nav ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 100vh;
+	width: 80vw;
+	margin: auto;
+}
+
+nav ul li{
+    list-style-type: none;
+    padding: 0 1vw;
+}
+
+nav ul li a{
+    font-family: 'Seravek', sans-serif;
+    text-decoration: none;
+    color: #131415;
+}
+
+/* p{
+	max-width: 400px;
+} */
