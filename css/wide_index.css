@@ -329,7 +329,10 @@
 			"bottom bottom bottom";
 	}
 
-	i {
+	.contactDetailsIconsFooter {
+		max-width: 20px;
+		height: auto;
+		transform: translate(0, 25%);
 		padding-right: 10px;
 	}
 
