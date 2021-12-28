@@ -6,7 +6,8 @@
 /* Fonts */
 @font-face {
   font-family: 'Gardenia Summer';
-  src: url('fonts/GardeniaSummer-nRLy4.ttf') format('truetype');
+  src:	url('fonts/GardeniaSummer-nRLy4.ttf') format('truetype'),
+  		url('fonts/GardeniaSummer-nRLy4.woff') format('woff');
 }
 
 /* Fonts */
