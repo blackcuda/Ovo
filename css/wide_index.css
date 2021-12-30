@@ -46,7 +46,6 @@
 		font-family: 'Seravek', sans-serif;
 		color: #131415;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
-
 	}
 
 	p{
@@ -126,7 +125,7 @@
 
 /* Buttons */
 
-	button {
+	button, .submitButton {
 		background-color: #F2C008; 
 		border-radius: 6px;
 		padding: 10px 48px;
@@ -196,7 +195,7 @@
 	#werkwijze {
 		text-align: center;
 		margin: -200px 0 0 0;
-		height: 80vh;
+		height: 1200px;
 		z-index: 1;
 		width: 100%;
 	}
@@ -306,6 +305,10 @@
 
 /* Section 6 Contact */
 
+	#contact{
+		display: flex;
+
+	}
 	.contacttext {
 		margin: 200px 15%;
 		width: calc(100vw * (3/10));
@@ -321,6 +324,52 @@
 		transform: translate(0, 25%);
 		padding: 0 15px 10px 0;
 	}
+
+	.formArticle {
+		margin-top: 200px;
+		width: calc(100vw * (3/10));
+	}
+	.label{
+		margin-bottom: 0;
+		line-height: .8;
+	}
+
+	input {
+		width: calc(100% - 10px);
+		border: none;
+		border-bottom: 2px solid;
+		padding: 5px;
+		margin-bottom: 50px;
+		background-color: #FAFAFA;
+		font-family: 'Seravek', sans-serif;
+		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+	}
+	textarea {
+		width: calc(100% - 10px);
+		border: none;
+		border-bottom: 2px solid;
+		padding: 5px;
+		margin-bottom: 50px;
+		background-color: #FAFAFA;
+		font-family: 'Seravek', sans-serif;
+		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+	}
+
+	.submitButton {
+		width: auto;
+		margin: 0 0 auto auto;
+	}
+
+	input::placeholder, textarea::placeholder {
+		font-family: 'Seravek', sans-serif;
+		color: #999;
+		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+		padding: 5px;
+		line-height: 1.4;
+		letter-spacing: 0.04em;
+	}
+
+	
 
 /* Footer - info bar */
 
