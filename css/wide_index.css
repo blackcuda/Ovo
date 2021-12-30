@@ -146,10 +146,11 @@
 		max-width: 1200px;
 		margin-left: 10%;
 		padding-right: 15.6%;
+		padding-top: 20px;
 	}
 
 	.introtext {
-		padding-top: calc(0px + (110 - 0) * ((100vw - 300px) / (1600 - 300)));
+		padding-top: calc(0px + (130 - 0) * ((100vw - 300px) / (1600 - 300)));
 		margin-left: 15%;
 	}
 	.introtext>h1 {
@@ -228,6 +229,7 @@
 	  display: none;
 	  text-align: left;
 	  margin-left: 50%;
+	  padding-top: 50px;
 	}
 
 	.tabs__content>p{
@@ -248,32 +250,40 @@
 	#tarievensectie {
 	background-color: #F0F0D6;
 	}
+
 	.tarieven {
 		margin: 0 15%;
 		padding: 50px 0;
 		width: calc(100vw * (1/4));
-		
+		z-index: -1;
 	}
+	.figureStones {
+		position: absolute;
+		overflow-x: hidden;
+		max-width: 100%;
+		transform: translate(0,-50%);
+		margin-top: -150px;
+
+	}
+	.bg_stones{	
+		width: calc(100vw * (8/9));
+		min-width: 1200px;
+		margin-left:  calc(42% + (100vw * (1/9)));
+	}
+
 	.vergoedingen {
 		margin: 0 15% 0 auto;
 		width: calc(100vw * (2/9));
 		transform: translate(0,-100%);
+		min-width: 260px;
+		z-index: 1000;
 	}
 
 	.vergoedingen>h2 {
 		padding-bottom: 20px;
 	}
-	.figure__stones{
-		width: 100%;
-		overflow-x: hidden;
-		margin-top: -730px;
-		position: absolute;
-	}
-	.bg_stones{
-/* 1200px breed */		
-		max-width: 1200px;
-		z-index: -1;
-	}
+
+	
 
 /* Section 5 Over mij */
 
