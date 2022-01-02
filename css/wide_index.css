@@ -413,6 +413,7 @@
 	.footer_a2 {
 		grid-area: right;
 		margin: 4vh 10% 4vh 0;
+		display: block;
 	}
 
 	.logo_container {
