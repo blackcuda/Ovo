@@ -7,6 +7,10 @@ body, html {
 	overflow-x: hidden;
 	max-width: 100vw; 
 }
+
+/*    Fonts   */
+
+
 /* Buttons */
 
 button, .submitButton {
@@ -14,9 +18,49 @@ button, .submitButton {
 	border-radius: 6px;
 	padding: 10px 48px;
 	border: none;
-	font-family: 'Seravek', sans-serif;
+	font-family: 'Mukta', sans-serif;
+	font-weight: 400;
 	font-size: 18px;
+	margin-top: 20px;
 }
+
+/*    Home    */
+.introtext {
+	padding: 40px;
+}
+
+.pic1Desktop {
+	display: none;
+}
+
+.pic1Mobile {
+	display: block;
+	max-width: 100vw;
+	transform: translate(10%,0);
+}
+
+/*    De Overgang    */
+.info_overgang {
+	padding: 40px;
+}
+
+.mobile_break {
+	display: block;
+}
+
+/*    Werkwijze    */
+
+
+/*    Tarieven   */
+#tarievensectie {
+	background-color: #F0F0D6;
+}
+
+.tarieven {
+	padding: 40px;
+}
+
+
 /*    Vergoedingen    */
 .figureStones {
 	position: absolute;
@@ -36,11 +80,15 @@ button, .submitButton {
 	max-width: 50%;
 }
 
-
 /*    Over mij    */
-.pic2 {
+.pic2Mobile {
+	display: block;
 	max-width: 100vw;
 	transform: translate(-20%,0);
+}
+
+.pic2Desktop {
+	display: none;
 }
 
 .Over_mij_text{
@@ -69,7 +117,7 @@ button, .submitButton {
 }
 
 .label {
-	line-height: .8;
+	line-height: 1;
 }
 
 input {
@@ -79,9 +127,11 @@ input {
 	padding: 5px;
 	margin-bottom: 50px;
 	background-color: #FAFAFA;
-	font-family: 'Seravek', sans-serif;
+	font-family: 'Mukta', sans-serif;
+	font-weight: 400;
 	font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
+
 textarea {
 	width: 100%;
 	border: none;
@@ -89,7 +139,8 @@ textarea {
 	padding: 5px;
 	margin-bottom: 50px;
 	background-color: #FAFAFA;
-	font-family: 'Seravek', sans-serif;
+	font-family: 'Mukta', sans-serif;
+	font-weight: 400;
 	font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -99,18 +150,21 @@ textarea {
 }
 
 input::placeholder, textarea::placeholder {
-	font-family: 'Seravek', sans-serif;
+	font-family: 'Mukta', sans-serif;
+	font-weight: 400;
 	color: #999;
 	font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 	padding: 5px;
 	line-height: 1.4;
 	letter-spacing: 0.04em;
 }
+
 /*    Footer     */
 footer{
 	border-top: 20px solid #ADBD92;
 
 }
+
 .kaart{
 	display: flex;
 	align-items: center;
@@ -121,6 +175,7 @@ footer{
 	overflow: hidden;
 	background-color: #B5C8BB;
 }
+
 .kaart img{
 	height: 450px;
 	width: auto;
@@ -141,7 +196,6 @@ footer{
 	align-items: center;
 	gap: 40px;
 	padding-top: 20px;
-
 }
 
 .logo_liggend{
@@ -159,6 +213,7 @@ footer{
 	text-align: center;
 	max-width: 100vw;
 }
+
 .extraFooter>p{
 	padding: 15px;
 	font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));

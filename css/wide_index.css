@@ -3,6 +3,10 @@
 	padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 /* Fonts */
 @font-face {
   font-family: 'Gardenia Summer';
@@ -12,7 +16,8 @@
 
 /* Fonts */
 	h1 {
-		font-family: 'Seravek Medium', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 600;
 		color: #131415;
 		font-size: calc(32px + (42 - 32) * ((100vw - 300px) / (1600 - 300)));
 		font-weight: bold;
@@ -28,14 +33,16 @@
 	}
 
 	h3{
-		font-family: 'Seravek Medium', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 600;
 		color: #131415;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 		padding-bottom: 25px;
 	}
 
 	h4{
-		font-family: 'Seravek Medium', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 800;
 		font-size: calc(48px + (128 - 48) * ((100vw - 300px) / (1600 - 300)));
 		color: #F0F0D6;
 		position: absolute;
@@ -43,13 +50,15 @@
 	}
 
 	label {
-		font-family: 'Seravek', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 		color: #131415;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 	}
 
 	p{
-		font-family: 'Seravek', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 		color: #131415;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 		padding-bottom: 10px;
@@ -101,7 +110,8 @@
 	}
 
 	nav ul li a{
-	    font-family: 'Seravek', sans-serif;
+	    font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 	    text-decoration: none;
 	    font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 	    color: #131415;
@@ -130,7 +140,8 @@
 		border-radius: 6px;
 		padding: 10px 48px;
 		border: none;
-		font-family: 'Seravek', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 		font-size: 18px;
 	}
 
@@ -160,8 +171,11 @@
 		margin: 4% 0 2vh 0;
 		max-width: 450px;
 	}
-
-	.pic1 {
+	.pic1Mobile {
+		display: none;
+	}
+	.pic1Desktop {
+		display: block;
 		max-width: 40vw;
 		position: absolute;
 		margin-left: 55%;
@@ -189,6 +203,10 @@
 		margin-right: 0;
 		margin-left: auto;
 		transform: translate(0,-50%);
+	}
+
+	.mobile_break{
+		display: none;
 	}
 
 /* section 3 Werkwijze */
@@ -290,8 +308,12 @@
 		width: calc(100vw * (4/10));
 		margin-left: 50%;
 	}
+	.pic2Mobile {
+		display: none;
+	}
 
-	.pic2 {
+	.pic2Desktop {
+		display: block;
 		overflow: hidden;
 		position: absolute;
 		image-rendering: -moz-crisp-edges;
@@ -341,7 +363,8 @@
 		padding: 5px;
 		margin-bottom: 50px;
 		background-color: #FAFAFA;
-		font-family: 'Seravek', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 	}
 	textarea {
@@ -351,7 +374,8 @@
 		padding: 5px;
 		margin-bottom: 50px;
 		background-color: #FAFAFA;
-		font-family: 'Seravek', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 	}
 
@@ -361,7 +385,8 @@
 	}
 
 	input::placeholder, textarea::placeholder {
-		font-family: 'Seravek', sans-serif;
+		font-family: 'Mukta', sans-serif;
+		font-weight: 400;
 		color: #999;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
 		padding: 5px;
@@ -407,6 +432,7 @@
 		width: auto;
 	}
 	.footer_a1 {
+		padding: 0;
 		grid-area: left;
 		margin: 4vh 0 4vh 10%;
 	}
