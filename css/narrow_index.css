@@ -9,7 +9,68 @@ body, html {
 }
 
 /*    Fonts   */
+@font-face {
+  font-family: 'Gardenia Summer';
+  src:	url('fonts/GardeniaSummer-nRLy4.ttf') format('truetype'),
+  		url('fonts/GardeniaSummer-nRLy4.woff') format('woff');
+}
 
+h1 {
+	font-family: 'Mukta', sans-serif;
+	font-weight: 600;
+	color: #131415;
+	font-size: calc(32px + (42 - 32) * ((100vw - 300px) / (1600 - 300)));
+	font-weight: bold;
+	letter-spacing: 0.04em;
+	line-height: 1.2em;
+	padding-top: 40px;
+}
+
+h2 {
+	font-family: 'Gardenia Summer', sans-serif;
+	color: #131415;
+	font-size: calc(65px + (100 - 65) * ((100vw - 300px) / (1600 - 300)));
+	font-weight: 200;
+	padding-bottom: 50px;
+}
+
+h3{
+	font-family: 'Mukta', sans-serif;
+	font-weight: 600;
+	color: #131415;
+	font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+	padding-bottom: 25px;
+}
+
+h4{
+	font-family: 'Mukta', sans-serif;
+	font-weight: 800;
+	font-size: calc(38px + (128 - 38) * ((100vw - 300px) / (1600 - 300)));
+	color: #F0F0D6;
+	position: absolute;
+	z-index: -1;
+	max-width: 1200px;
+	margin: 20px;
+	line-height: 1.4em;
+}
+
+
+label {
+	font-family: 'Mukta', sans-serif;
+	font-weight: 400;
+	color: #131415;
+	font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+p {
+	font-family: 'Mukta', sans-serif;
+	font-weight: 400;
+	color: #131415;
+	font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+	padding-bottom: 10px;
+	line-height: 1.4;
+	letter-spacing: 0.04em;
+}
 
 /* Buttons */
 
@@ -27,6 +88,9 @@ button, .submitButton {
 /*    Home    */
 .introtext {
 	padding: 40px;
+}
+.introtext>p {
+	margin: 20px 0 0 0;
 }
 
 .pic1Desktop {
@@ -50,6 +114,9 @@ button, .submitButton {
 
 /*    Werkwijze    */
 
+#werkwijze {
+	margin: 40px;
+}
 
 /*    Tarieven   */
 #tarievensectie {

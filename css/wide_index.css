@@ -28,7 +28,7 @@ html {
 		font-family: 'Gardenia Summer', sans-serif;
 		color: #131415;
 		font-size: calc(65px + (100 - 65) * ((100vw - 300px) / (1600 - 300)));
-		font-weight: lighter;
+		font-weight: 200;
 		padding-bottom: 50px;
 	}
 
@@ -80,20 +80,13 @@ html {
 		height: calc(70px + (180 - 70) * ((100vw - 300px) / (1600 - 300)));
 	}
 
-	#wide_nav{
-		display: block;
-	}
-
 	#logo_horizontal {
 		width: 22%;
 		height: auto;
 		margin: 30px 10%;
 		position: absolute;
 	}
-	#meny {
-		transform: none;
-		background: none;
-	}
+	
 	nav ul {
 		display: flex;
 		flex-direction: row;
@@ -121,17 +114,6 @@ html {
 	    color: #F2C008;
 	}
 
-	#meny {
-	z-index: 100;
-	}
-
-	#menyAvPaa, #burger {
-		display: none;
-	}
-
-	.sticky {
-		position: fixed;
-	}
 
 /* Buttons */
 
