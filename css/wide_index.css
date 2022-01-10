@@ -127,6 +127,13 @@ html {
 		font-size: 18px;
 	}
 
+	button:hover, .submitButton:hover {
+		transform: scale(1.03);
+	}
+	
+	button:active, .submitButton:active {
+		border: solid 2px black;
+	}
 /* Clipping masks & images */
 	.clip_2 {
 		max-width: 30%;
