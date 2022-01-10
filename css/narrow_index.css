@@ -311,7 +311,7 @@ input {
 	border: none;
 	border-bottom: 2px solid;
 	padding: 5px;
-	margin-bottom: 50px;
+	margin-bottom: 32px;
 	background-color: #FAFAFA;
 	font-family: 'Mukta', sans-serif;
 	font-weight: 400;
@@ -323,7 +323,7 @@ textarea {
 	border: none;
 	border-bottom: 2px solid;
 	padding: 5px;
-	margin-bottom: 50px;
+	margin-bottom: 32px;
 	background-color: #FAFAFA;
 	font-family: 'Mukta', sans-serif;
 	font-weight: 400;
