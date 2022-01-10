@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&display=swap" rel="stylesheet">
 	<!-- CSS files -->
 	<link rel="stylesheet" media="screen and (min-width: 300px)" type="text/css" href="css/narrow_index.css">
-	<link rel="stylesheet" media="screen and (min-width: 1024px)" type="text/css" href="css/wide_index.css">
+	<link rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" href="css/wide_index.css">
 </head>
 <body>
 	<header class="navBar" id="stickyNavBar">
@@ -440,22 +440,27 @@
 				</g>
 			</svg>
 		</a>
-
-<!--		<input type="checkbox" id="menyAvPaa" class="no">
-		    <label id="burger" for="menyAvPaa" class="no">
-		        <div></div>
-		        <div></div>
-		        <div></div>
-		    </label> id="meny"
--->		<nav >
+		<nav>
 			<ul>
-				<li><a class="navLink" href="#overgang">De overgang</a></li>
-				<li><a class="navLink" href="#werkwijze">Werkwijze</a></li>
-				<li><a class="navLink" href="#tarievensectie">Tarieven</a></li>
-				<li><a class="navLink" href="#over_mij">Over mij</a></li>
-				<li><a class="navLink" href="#contact">Contact</a></li>
+				<li><a href="#overgang">De overgang</a></li>
+				<li><a href="#werkwijze">Werkwijze</a></li>
+				<li><a href="#tarievensectie">Tarieven</a></li>
+				<li><a href="#over_mij">Over mij</a></li>
+				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
+		<div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+			<ul class="mobile-menu">
+				<li><a href="#overgang">De overgang</a></li>
+				<li><a href="#werkwijze">Werkwijze</a></li>
+				<li><a href="#tarievensectie">Tarieven</a></li>
+				<li><a href="#over_mij">Over mij</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
 	</header>
 	<section id="home">
 		<h4>Open je ogen voor de Overgang</h4>
@@ -537,7 +542,7 @@
 		<article class="tarieven">
 			<h2>Tarieven</h2>
 			<p>
-				Voor een consult wordt € 75,00 per uur gerekend. Dit tarief is afgesproken binnen de vereniging van overgangsconsulentes waar ik bij aangesloten ben.
+				Voor een consult wordt € 80,00 per uur gerekend. Dit tarief is afgesproken binnen de vereniging van overgangsconsulentes waar ik bij aangesloten ben.
 				<br/><br/>
 				De consulten dienen na het consult betaald te worden. Per mail wordt de factuur naar u verstuurd.
 			</p>
@@ -549,7 +554,7 @@
 			<p>
 				De meeste zorgverzekeringen vergoeden (deels) de overgangsconsulten via hun aanvullende verzekering.
 				<br/><br/>
-				Op <a href="www.zorgwijzer.nl">www.zorgwijzer.nl</a> kunt u checken of ook uw verzekering het consult (deels) vergoedt.
+				Op <a href="https://www.zorgwijzer.nl/" target="_blank">www.zorgwijzer.nl</a> kunt u checken of ook uw verzekering het consult (deels) vergoedt.
 			</p>
 	</article>
 	<section id="over_mij">
@@ -574,7 +579,7 @@
 		<article class="contacttext">
 			<h2>Contact</h2>
 			<p>
-				Een afspraak maak je eenvoudig via het formulier hiernaast of met onderstaande gegevens. Heb je nog twijfels of zijn er dingen onduidelijk? Bel gerust!
+				Een afspraak maak je eenvoudig via het contactformulier of met onderstaande gegevens. Heb je nog twijfels of zijn er dingen onduidelijk? Bel gerust!
 			</p>
 			<p class="contactDetails">
 				<img src="images/svg/phone_icon.svg" alt="icon-telefoon" class="contactDetailsIcons"><a href="tel:+31622441560">+31 (0)6 - 22441560</a><br/>
@@ -583,14 +588,16 @@
 			</p>
 		</article>
 		<article class="formArticle">
-			<form id="contactForm" name="contactForm">
+			<form id="contactForm" name="contactForm" action="includes/contactform.php" onsubmit="return validateForm()" method="post">
 			    <p class="label"><label>Naam</label></p>
-			    <input name="name" type="text" placeholder="Naam"/>
+			    <input name="name" id="name" type="text" placeholder="Naam"/>
+			    <label for="name" id="nameErrorLabel"></label>
 			    <p class="label"><label>Email</label></p>
-			    <input name="email" type="email" placeholder="Email"/>
+			    <input name="email" id="mail" type="email" placeholder="Email"/>
+			    <label for="mail" id="mailErrorLabel"></label>
 			    <p class="label"><label>Bericht</label></p>
-			    <textarea name="message" placeholder="Bericht"></textarea>
-			    <input class="submitButton" name="submit" type="submit" value="Send"/>
+			    <textarea name="message" id="message" placeholder="Bericht"></textarea>
+			    <input class="submitButton" name="submit" type="submit" value="Verstuur formulier"/>
 			</form>
 		</article>
 	</section>
@@ -619,7 +626,7 @@
 		</article>
 		<article class="extraFooter">
 <!--  DOCS Invoegen -->
-			<p><a href="" target="_blank">Privacyverklaring</a> - <a href="" target="_blank">Algemene voorwaarden</a> - &copy; 2021 Oog voor Overgang</p>
+			<p><a href="docs/PrivacyVerklaring_Oog_voor_Overgang.pdf" target="_blank">Privacyverklaring</a> - <a href="docs/AlgemeneVoorwaarden_Oog_voor_Overgang.pdf" target="_blank">Algemene voorwaarden</a> - &copy; 2021 Oog voor Overgang</p>
 		</article>
 	<!-- Script files -->
 	<script type="text/javascript" src="js/index.js"></script>
