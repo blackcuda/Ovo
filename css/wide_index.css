@@ -116,27 +116,27 @@ html {
 	nav ul li a:hover{
 	    color: #F2C008;
 	}
+
 /* Navigatie Hamburger menu */
-#hamburger-icon {
-  margin: auto 0;
-  display: none;
-  cursor: pointer;
-}
+	#hamburger-icon {
+	  margin: auto 0;
+	  display: none;
+	  cursor: pointer;
+	}
 
-.mobile-menu {
-  display: none;
-}
+	.mobile-menu {
+	  display: none;
+	}
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
+	.sticky {
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	}
 
-.sticky + .content {
-  padding-top: 102px;
-}
-
+	.sticky + .content {
+	  padding-top: 102px;
+	}
 
 /* Buttons */
 
