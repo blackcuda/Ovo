@@ -366,6 +366,7 @@ html {
 	.label{
 		margin-bottom: 0;
 		line-height: .8;
+		margin-top: 32px;
 	}
 
 	input {
@@ -373,7 +374,6 @@ html {
 		border: none;
 		border-bottom: 2px solid;
 		padding: 5px;
-		margin-bottom: 32px;
 		background-color: #FAFAFA;
 		font-family: 'Mukta', sans-serif;
 		font-weight: 400;
@@ -384,7 +384,6 @@ html {
 		border: none;
 		border-bottom: 2px solid;
 		padding: 5px;
-		margin-bottom: 32px;
 		background-color: #FAFAFA;
 		font-family: 'Mukta', sans-serif;
 		font-weight: 400;
@@ -393,7 +392,7 @@ html {
 
 	.submitButton {
 		width: auto;
-		margin: 0 0 auto auto;
+		margin: 32px 0 auto auto;
 	}
 
 	input::placeholder, textarea::placeholder {
