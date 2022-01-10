@@ -42,13 +42,13 @@ function validateEmail(email)
 	if ("" == email)
 	{
 	  returnValue = false;
-	  document.getElementById('mailErrorLabel').textContent = "Please enter your e-mail address.";
+	  document.getElementById('mailErrorLabel').textContent = "Voer hier uw e-mailadres in.";
 	  document.getElementById('mailErrorLabel').style.color  = "red";
 	}
 	else if (!re.test(email))
 	{
 	  returnValue = false;
-	  document.getElementById('mailErrorLabel').textContent = "Please enter a valid e-mail address.";
+	  document.getElementById('mailErrorLabel').textContent = "Vul een geldig e-mailadres in.";
 	  document.getElementById('mailErrorLabel').style.color  = "red";
 	}
 
@@ -63,14 +63,14 @@ function validateName(name)
 	{
 	  // Please enter your name.
 	  nameCorrect = false;   	
-	  document.getElementById('nameErrorLabel').textContent = "Please enter your name.";
+	  document.getElementById('nameErrorLabel').textContent = "Voer hier uw naam in.";
 	  document.getElementById('nameErrorLabel').style.color  = "red";
 	}
 	else if (false == (/^[A-Za-z .'-]+$/.test(name)))
 	{
 	  // Your name must contain only alphabetic characters
 	  nameCorrect = false;
-	  document.getElementById('nameErrorLabel').textContent = "Your name must contain only alphabetic characters.";
+	  document.getElementById('nameErrorLabel').textContent = "Uw naam mag alleen bestaan uit letters.";
 	  document.getElementById('nameErrorLabel').style.color  = "red";
 	}
 	
