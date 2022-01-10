@@ -81,7 +81,7 @@ html {
 	}
 
 	#logo_horizontal {
-		width: 22%;
+		min-width: 22%;
 		height: auto;
 		margin: 30px 10%;
 		position: absolute;

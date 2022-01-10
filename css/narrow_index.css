@@ -34,6 +34,7 @@ h2 {
 	font-family: 'Gardenia Summer', sans-serif;
 	color: #131415;
 	font-size: calc(65px + (100 - 65) * ((100vw - 300px) / (1600 - 300)));
+	font-weight: 300;
 	padding-bottom: 50px;
 }
 
