@@ -110,7 +110,7 @@ button:active, .submitButton:active {
 
 /*   Header   */
 #logo_horizontal {
-	max-width: 250px;
+	width: 250px;
 	margin: 10px 0 0 20px;
 }
 
