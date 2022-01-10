@@ -130,7 +130,7 @@ html {
 	button:hover, .submitButton:hover {
 		transform: scale(1.03);
 	}
-	
+
 	button:active, .submitButton:active {
 		border: solid 2px black;
 	}
@@ -458,4 +458,6 @@ html {
 		font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));
 	}
 
-
+	.extraFooter a:hover {
+		color: darkgrey;
+	}

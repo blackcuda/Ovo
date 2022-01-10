@@ -315,3 +315,6 @@ footer{
 	padding: 15px;
 	font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));
 }
+.extraFooter a:hover {
+	color: darkgrey;
+}
