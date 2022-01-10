@@ -58,7 +58,6 @@ h4{
 	line-height: 1.4em;
 }
 
-
 label {
 	font-family: 'Mukta', sans-serif;
 	font-weight: 400;
@@ -86,6 +85,96 @@ a:hover {
 
 a:visited {
 	color: ;
+}
+
+/*  Navigatie  */
+header {
+	background-color: rgba(255, 255, 255, .6);
+}
+
+header>nav {
+	display: none;
+}
+
+.navBar {
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+	align-items: center;
+}
+
+ul li{
+    list-style-type: none;
+    padding: 0 1%;
+}
+
+.mobile-menu>li>a{
+    font-family: 'Mukta', sans-serif;
+	font-weight: 400;
+    text-decoration: none;
+    font-size: 24px;
+    color: #131415;
+}
+
+#hamburger-icon {
+	display: block;
+	padding-right: 40px;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 40px;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top:104px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .95);
+  z-index: 10;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
 }
 
 /* Buttons */
