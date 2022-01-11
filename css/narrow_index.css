@@ -237,6 +237,54 @@ button:active, .submitButton:active {
 	margin: 40px;
 }
 
+span {
+	display: none;
+}
+
+.tabs {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0px auto auto 50%;
+	transform: translate(-50%, 0);
+}
+
+.tabs__label {
+	padding: 10px 16px;
+	cursor: pointer;
+}
+
+.tabs__label>h4{
+	margin: 0;
+	transform: translate(-50%, -65%);
+}
+
+.tabs__radio {
+	display: none;
+}
+
+.tabs__content {
+	order: 1;
+	width: 100%;
+	display: none;
+	text-align: left;
+	padding-top: 20px;
+}
+
+.tabs__content>p{
+	max-width: 100%;
+}
+
+.tabs__radio:checked + .tabs__label {
+	font-weight: bold;
+	border-bottom: 3px solid #F2C008;
+}
+
+.tabs__radio:checked + .tabs__label + .tabs__content {
+	display: initial;
+}
+
 /*    Tarieven   */
 #tarievensectie {
 	background-color: #F0F0D6;
@@ -245,7 +293,6 @@ button:active, .submitButton:active {
 .tarieven {
 	padding: 40px;
 }
-
 
 /*    Vergoedingen    */
 .figureStones {

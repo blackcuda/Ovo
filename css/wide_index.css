@@ -74,6 +74,11 @@ html {
 		color: #F2C008;
 	}
 
+	span {
+		font: inherit;
+		display: inline-block;
+	}
+
 /* Header - nav bar */
 
 	header>nav {
