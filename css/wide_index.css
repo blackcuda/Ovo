@@ -143,6 +143,14 @@ html {
 	  padding-top: 102px;
 	}
 
+	#pageHeader{
+		background-color: #fff;
+	}
+
+	.navBar {
+		display: block;
+		z-index: 10;
+	}
 /* Buttons */
 
 	button, .submitButton {
@@ -338,7 +346,8 @@ html {
 		image-rendering: -webkit-optimize-contrast;
 		-ms-interpolation-mode: nearest-neighbor;
 		margin: -50px auto auto -150px;
-		max-width: 50%;
+		width: 50%;
+		max-width: 1000px;
 	}
 	
 

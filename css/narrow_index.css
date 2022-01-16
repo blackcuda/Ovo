@@ -101,6 +101,8 @@ header>nav {
 	justify-content: space-between;
 	height: auto;
 	align-items: center;
+	background-color: rgba(255, 255, 255, 1);
+	z-index: 10;
 }
 
 ul li{
@@ -159,7 +161,7 @@ ul li{
   top:104px;
   height: 100vh;
   width: 100%;
-  background-color: rgba(255, 255, 255, .95);
+  background-color: rgba(255, 255, 255, .85);
   z-index: 10;
 }
 
@@ -237,16 +239,12 @@ button:active, .submitButton:active {
 	margin: 40px;
 }
 
-span {
-	display: none;
-}
-
 .tabs {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	width: 100%;
-	margin: 0px auto auto 50%;
+	margin: 20px auto auto 50%;
 	transform: translate(-50%, 0);
 }
 
@@ -283,6 +281,10 @@ span {
 
 .tabs__radio:checked + .tabs__label + .tabs__content {
 	display: initial;
+}
+
+span{
+	display: none;
 }
 
 /*    Tarieven   */
