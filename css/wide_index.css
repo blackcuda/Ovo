@@ -167,7 +167,8 @@ html {
 		border: none;
 		font-family: 'Mukta', sans-serif;
 		font-weight: 400;
-		font-size: 18px;
+		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
+		
 	}
 
 	button:hover, .submitButton:hover {
