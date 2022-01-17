@@ -290,29 +290,31 @@ span{
 /*    Tarieven   */
 #tarievensectie {
 	background-color: #F0F0D6;
+	z-index: -1;
 }
 
-.tarieven {
+.tarieven, .vergoedingen {
 	padding: 40px;
 }
 
-/*    Vergoedingen    */
-.figureStones {
+.figureStonesDesk {
+		display: none;
+}
+
+.figureStonesMob {
+	display: block;
+	transform: translate(0,-40%);
+	width: 100%;
+	text-align: right;
 	position: absolute;
-	width: 100vw;
-	z-index: -1;
-	transform: translate(0,-30%);
+	z-index: 0;
 	overflow-x: hidden;
 }
 
-.bg_stones {
-	width: 220vw;
-	transform: translate(-5%,0);
-}
-
-.vergoedingen {
-	margin: 40px;
-	max-width: 50%;
+.bg_stones{	
+	margin: 0 -25% auto auto;
+	width: 50%;
+	min-width: 200px;
 }
 
 /*    Over mij    */
