@@ -173,6 +173,8 @@ ul li{
   position: fixed;
   top: 0;
   width: 100%;
+  transition: .6s;
+  box-shadow: 0 0px 4px rgba(0,0,0,0.2);
 }
 
 .sticky + .content {
