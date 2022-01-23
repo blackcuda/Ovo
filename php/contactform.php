@@ -19,7 +19,6 @@ if(isset($_POST['submit']))
 	$headers = "From: ".$mailFrom;
 	$txt = "You have received an e-mail from ".$name.".\n\n".$message;
 
-	
 	$errorCode = errorCodeEnum::ERRORNO;
 	
 	if(!preg_match("/^[A-Za-z .'-]+$/", $name))
@@ -37,14 +36,20 @@ if(isset($_POST['submit']))
 	if ($errorCode != errorCodeEnum::ERRORNO)
 	{
 		mail($mailTo, $subject, $txt, $headers);
-		//header("Location: ../contactform.html?contactform=correct");
+		header("Location: ../index.html?contactform=correct");
+	}
+	else
+	{
+		header("Location: ../index.html?contactform=error");
 	}
 	
+	/*
 	echo '<script type="text/javascript">
 		contactServerReturn($errorCode);
 	</script>';
+	*/
 	
-	//header("Location: ../index.html?contactform=correct");
+
 	
 	/*
 	if (empty($name)|| empty($mailFrom) || empty($message))
