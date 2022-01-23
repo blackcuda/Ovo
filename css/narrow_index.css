@@ -53,7 +53,7 @@ h4{
 	color: #F0F0D6;
 	position: absolute;
 	z-index: -1;
-	max-width: 1200px;
+	max-width: auto;
 	margin: 20px;
 	line-height: 1.4em;
 }
