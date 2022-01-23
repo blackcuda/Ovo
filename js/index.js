@@ -29,22 +29,40 @@ function scrollToTargetAdjusted(clickedId) {
 	{
 		case 'buttonHome':
 			element = document.getElementById('home');
-		break;
+			break;
+		case 'buttonHomeMob':
+			element = document.getElementById('home');
+			break;
 		case 'buttonOvergang':
 			element = document.getElementById('overgang');
-		break;
+			break;
+		case 'buttonOvergangMob':
+			element = document.getElementById('overgang');
+			break;
 		case 'buttonWerkwijze':
 			element = document.getElementById('werkwijze');
-		break;
+			break;
+		case 'buttonWerkwijzeMob':
+			element = document.getElementById('werkwijze');
+			break;
 		case 'buttonTarievenSectie':
 			element = document.getElementById('tarievensectie');
-		break;
+			break;
+		case 'buttonTarievenSectieMob':
+			element = document.getElementById('tarievensectie');
+			break;
 		case 'buttonOverMij':
 			element = document.getElementById('over_mij');
-		break;
+			break;
+		case 'buttonOverMijMob':
+			element = document.getElementById('over_mij');
+			break;
 		case 'buttonContact':
 			element = document.getElementById('contact');
-		break;
+			break;
+		case 'buttonContactMob':
+			element = document.getElementById('contact');
+			break;
 		default:
 			element = document.getElementById('home');
 	}
