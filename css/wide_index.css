@@ -158,6 +158,7 @@ html {
 	#pageHeader{
 		background-color: #fff;
 	}
+
 /* Buttons */
 
 	button, .submitButton {
@@ -168,7 +169,6 @@ html {
 		font-family: 'Mukta', sans-serif;
 		font-weight: 400;
 		font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1600 - 300)));
-		
 	}
 
 	button:hover, .submitButton:hover {
@@ -361,15 +361,19 @@ html {
 		max-width: 1000px;
 	}
 	
+	#over_mij {	
+		margin-bottom: 200px;
+	}
 
 /* Section 6 Contact */
 
 	#contact{
 		display: flex;
+		margin-bottom: 200px;
 
 	}
 	.contacttext {
-		margin: 200px 15%;
+		margin: 0 15% 200px 15%;
 		width: calc(100vw * (3/10));
 		padding: 0;
 	}

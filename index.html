@@ -14,7 +14,7 @@
 </head>
 <body>
 	<header class="navBar" id="pageHeader">
-		<a href="#home">
+		<a id="buttonHome" onclick="scrollToTargetAdjusted(this.id)">
 			<svg version="1.1" id="logo_horizontal" xmlns="//www.w3.org/2000/svg" xmlns:xlink="//www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 550 205.882" enable-background="new 0 0 550 205.882" xml:space="preserve">
 				<g>
 					<path fill="#F2C008" d="M18.139,19.051C9.503,25.446,3.325,34.333,2.676,46.881C2.363,52.99,4.329,59,6.618,64.695
@@ -442,11 +442,11 @@
 		</a>
 		<nav>
 			<ul>
-				<li><a href="#overgang">De overgang</a></li>
-				<li><a href="#werkwijze">Werkwijze</a></li>
-				<li><a href="#tarievensectie">Tarieven</a></li>
-				<li><a href="#over_mij">Over mij</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a id="buttonOvergang" onclick="scrollToTargetAdjusted(this.id)">De overgang</a></li>
+				<li><a id="buttonWerkwijze" onclick="scrollToTargetAdjusted(this.id)">Werkwijze</a></li>
+				<li><a id="buttonTarievenSectie" onclick="scrollToTargetAdjusted(this.id)">Tarieven</a></li>
+				<li><a id="buttonOverMij" onclick="scrollToTargetAdjusted(this.id)">Over mij</a></li>
+				<li><a id="buttonContact" onclick="scrollToTargetAdjusted(this.id)">Contact</a></li>
 			</ul>
 		</nav>
 		<div id="hamburger-icon" onclick="toggleMobileMenu(this)">
