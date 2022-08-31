@@ -40,7 +40,7 @@ if(isset($_POST['submit']))
 	}
 	else
 	{
-		header("Location: ../index.html?contactform=error");
+    	header("Location: ../index.html?contactform=errorOccurred");
 	}
 	
 	/*
@@ -72,5 +72,7 @@ if(isset($_POST['submit']))
 }
 else
 {
-	header("Location: ../contactform.html?contactform=error");
+	header("Location: ../contactform.html?contactform=errorSubmitNotSet");
 }
+
+?>
