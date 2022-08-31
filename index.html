@@ -463,11 +463,11 @@
 			<div class="bar2"></div>
 			<div class="bar3"></div>
 			<ul class="mobile-menu">
-				<li><a href="#overgang">De overgang</a></li>
-				<li><a href="#werkwijze">Werkwijze</a></li>
-				<li><a href="#tarievensectie">Tarieven</a></li>
-				<li><a href="#over_mij">Over mij</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a id="buttonOvergangMob" onclick="scrollToTargetAdjusted(this.id)">De overgang</a></li>
+				<li><a id="buttonWerkwijzeMob" onclick="scrollToTargetAdjusted(this.id)">Werkwijze</a></li>
+				<li><a id="buttonTarievenSectieMob" onclick="scrollToTargetAdjusted(this.id)">Tarieven</a></li>
+				<li><a id="buttonOverMijMob" onclick="scrollToTargetAdjusted(this.id)">Over mij</a></li>
+				<li><a id="buttonContactMob" onclick="scrollToTargetAdjusted(this.id)">Contact</a></li>
 			</ul>
 		</div>
 	</header>
@@ -603,7 +603,7 @@
 			    <input name="name" id="name" type="text" placeholder="Naam"/>
 			    <label for="name" id="nameErrorLabel"></label>
 			    <p class="label"><label>Email</label></p>
-			    <input name="email" id="mail" type="email" placeholder="Email"/>
+			    <input name="mail" id="mail" type="email" placeholder="Email"/>
 			    <label for="mail" id="mailErrorLabel"></label>
 			    <p class="label"><label>Bericht</label></p>
 			    <textarea name="message" id="message" placeholder="Bericht"></textarea>
