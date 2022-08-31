@@ -11,7 +11,7 @@ abstract class errorCodeEnum
 if(isset($_POST['submit'])) 
 {
 	$name = htmlspecialchars(stripslashes(trim($_POST['name'])));
-	$mailFrom = htmlspecialchars(stripslashes(trim($_POST['mail'])));
+	$mailFrom = htmlspecialchars(stripslashes(trim($_POST['email'])));
 	$message = htmlspecialchars(stripslashes(trim($_POST['message'])));
 	
 	$mailTo = "info@oogvoorovergang.nl";
