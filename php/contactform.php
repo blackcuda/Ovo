@@ -1,6 +1,5 @@
 <?php
 
-	
 abstract class errorCodeEnum
 {
 	const ERRORNO = 0;
@@ -8,11 +7,16 @@ abstract class errorCodeEnum
 	const ERROREMAIL = 2;
 }
 
+$logFileName = './../logs/OogVoorOvergangLog_'.date("Y.n").'.log';
+
 if(isset($_POST['submit'])) 
 {
 	$name = htmlspecialchars(stripslashes(trim($_POST['name'])));
 	$mailFrom = htmlspecialchars(stripslashes(trim($_POST['email'])));
 	$message = htmlspecialchars(stripslashes(trim($_POST['message'])));
+	
+	$log = "[".date("Y.n.j, G:i:s")."] Submit Contact Form - Name: ".$name.", Email: ".$mailFrom.PHP_EOL;
+	file_put_contents($logFileName, $log, FILE_APPEND);
 	
 	$mailTo = "info@oogvoorovergang.nl";
 	$subject = "Contactformulier - Oog voor overgang";
@@ -35,11 +39,23 @@ if(isset($_POST['submit']))
 	
 	if ($errorCode == errorCodeEnum::ERRORNO)
 	{
-		mail($mailTo, $subject, $txt, $headers);
+		if (mail($mailTo, $subject, $txt, $headers))
+		{
+			$log = "[".date("Y.n.j, G:i:s")."] Email was sent successfully.".PHP_EOL;
+			file_put_contents($logFileName, $log, FILE_APPEND);
+		}
+		else
+		{
+			$log = "[".date("Y.n.j, G:i:s")."] Email was not sent. Mail error Occurred.".PHP_EOL;
+			file_put_contents($logFileName, $log, FILE_APPEND);	
+		}
+		
 		header("Location: ../index.html?contactform=correct");
 	}
 	else
 	{
+		$log = "[".date("Y.n.j, G:i:s")."] Error Occurred - Code: ".$errorCode.PHP_EOL;
+		file_put_contents($logFileName, $log, FILE_APPEND);
     	header("Location: ../index.html?contactform=errorOccurred");
 	}
 	
