@@ -1,5 +1,14 @@
 <?php
 
+//Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 abstract class errorCodeEnum
 {
 	const ERRORNO = 0;
@@ -7,88 +16,94 @@ abstract class errorCodeEnum
 	const ERROREMAIL = 2;
 }
 
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
 $logFileName = './../logs/OogVoorOvergangLog_'.date("Y.n").'.log';
 
-if(isset($_POST['submit'])) 
+try
 {
-	$name = htmlspecialchars(stripslashes(trim($_POST['name'])));
-	$mailFrom = htmlspecialchars(stripslashes(trim($_POST['email'])));
-	$message = htmlspecialchars(stripslashes(trim($_POST['message'])));
-	
-	$log = "[".date("Y.n.j, G:i:s")."] Submit Contact Form - Name: ".$name.", Email: ".$mailFrom.PHP_EOL;
-	file_put_contents($logFileName, $log, FILE_APPEND);
-	
-	$mailTo = "info@oogvoorovergang.nl";
-	$subject = "Contactformulier - Oog voor overgang";
-	$headers = "From: ".$mailFrom;
-	$txt = "You have received an e-mail from ".$name." ".$mailFrom.".\n\n".$message;
-
-	$errorCode = errorCodeEnum::ERRORNO;
-	
-	if(!preg_match("/^[A-Za-z .'-]+$/", $name))
+	if(isset($_POST['submit'])) 
 	{
-	  $errorCode = errorCodeEnum::ERRORNAME;
-	  echo "<script type='text/javascript'>alert('$nameErrorMessage');</script>";
-    }
+		$name = htmlspecialchars(stripslashes(trim($_POST['name'])));
+		$mailFrom = htmlspecialchars(stripslashes(trim($_POST['email'])));
+		$message = htmlspecialchars(stripslashes(trim($_POST['message'])));
 	
-	if(!filter_var($mailFrom, FILTER_VALIDATE_EMAIL))
-	{
-	  $errorCode = errorCodeEnum::ERROREMAIL;
-	  echo "<script type='text/javascript'>alert('$emailErrorMessage');</script>";
-	}
+		$log = "[".date("Y.n.j, G:i:s")."] Submit Contact Form - Name: ".$name.", Email: ".$mailFrom.PHP_EOL;
+		file_put_contents($logFileName, $log, FILE_APPEND);
 	
-	if ($errorCode == errorCodeEnum::ERRORNO)
-	{
-		if (mail($mailTo, $subject, $txt, $headers))
+		//Server settings
+		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+		$mail->isSMTP();                                            //Send using SMTP
+		$mail->Host       = 'mail.mijndomein.nl';                   //Set the SMTP server to send through
+		$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+		$mail->Username   = 'esther.geel@oogvoorovergang.nl';       //SMTP username
+		$mail->Password   = '!Info914615#';                         //SMTP password
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
+		$mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+	
+		//Recipients
+		$mail->setFrom('esther.geel@oogvoorovergang.nl', 'Esther Geel');
+		$mail->addAddress('info@oogvoorovergang.nl', 'Info_OogVoorOvergang');     //Add a recipient
+		$mail->addReplyTo('info@oogvoorovergang.nl', 'Information');
+		
+		
+		$txt = "
+			<html>
+			<body>
+			<p><b>Contactformulier Oog Voor Overgang</b> <br><br> 
+			Naam: ".$name." (".$mailFrom.")<br><br>"
+			.$message.
+			"</p>
+			</body>
+			</html>
+			";
+		
+		$txt = wordwrap($txt,70);
+		
+		//Content
+		$mail->isHTML(true);                                  //Set email format to HTML
+		$mail->Subject = 'Contactformulier - Oog voor overgang';
+		$mail->Body    = $txt;
+		$mail->AltBody = $txt;
+		
+		$errorCode = errorCodeEnum::ERRORNO;
+		
+		if(!preg_match("/^[A-Za-z .'-]+$/", $name))
 		{
-			$log = "[".date("Y.n.j, G:i:s")."] Email was sent successfully.".PHP_EOL;
-			file_put_contents($logFileName, $log, FILE_APPEND);
-		}
-		else
-		{
-			$log = "[".date("Y.n.j, G:i:s")."] Email was not sent. Mail error Occurred.".PHP_EOL;
-			file_put_contents($logFileName, $log, FILE_APPEND);	
+		  $errorCode = errorCodeEnum::ERRORNAME;
+		  echo "<script type='text/javascript'>alert('$nameErrorMessage');</script>";
 		}
 		
-		header("Location: ../index.html?contactform=correct");
-	}
-	else
-	{
-		$log = "[".date("Y.n.j, G:i:s")."] Error Occurred - Code: ".$errorCode.PHP_EOL;
-		file_put_contents($logFileName, $log, FILE_APPEND);
-    	header("Location: ../index.html?contactform=errorOccurred");
-	}
-	
-	/*
-	echo '<script type="text/javascript">
-		contactServerReturn($errorCode);
-	</script>';
-	*/
-	
-
-	
-	/*
-	if (empty($name)|| empty($mailFrom) || empty($message))
-	{
-		header("Location: ../index.html?contactform=empty");
-	}
-	else
-	{
-		if (!filter_var($mailFrom, FILTER_VALIDATE_EMAIL))
+		if(!filter_var($mailFrom, FILTER_VALIDATE_EMAIL))
 		{
-			header("Location: ../index.html?contactform=invalidemail");
+		  $errorCode = errorCodeEnum::ERROREMAIL;
+		  echo "<script type='text/javascript'>alert('$emailErrorMessage');</script>";
+		}
+		
+		if ($errorCode == errorCodeEnum::ERRORNO)
+		{
+			$mail->send();
+					
+			$log = "[".date("Y.n.j, G:i:s")."] Email was sent successfully.".PHP_EOL;
+			file_put_contents($logFileName, $log, FILE_APPEND);
+			
+			header("Location: ../index.html?contactform=correct");
 		}
 		else
 		{
-			mail($mailTo, $subject, $txt, $headers);
-			header("Location: ../index.html?contactform=correct");
-		}	
+			$log = "[".date("Y.n.j, G:i:s")."] Error Occurred - Code: ".$errorCode.PHP_EOL;
+			file_put_contents($logFileName, $log, FILE_APPEND);
+			header("Location: ../index.html?contactform=errorOccurred");
+		}
 	}
-	*/
-}
-else
+	else
+	{
+		header("Location: ../contactform.html?contactform=errorSubmitNotSet");
+	}
+} catch (Exception $e)
 {
-	header("Location: ../contactform.html?contactform=errorSubmitNotSet");
+	echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
 ?>
